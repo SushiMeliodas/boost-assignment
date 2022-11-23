@@ -1,4 +1,4 @@
-# boost-assignment
+# technical-assignment
 Technical assignment for React JS
 
 # How to work?
