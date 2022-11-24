@@ -1,11 +1,11 @@
-import { Box } from "@mui/material";
-import React from "react";
+import { Box, Stack, Typography, Grid, Divider } from '@mui/material';
+import React from 'react';
 
 // Css
 const customCss = {
   resultTag: {
-    marginLeft: "55px",
-    minHeight: "320px",
+    marginLeft: '55px',
+    minHeight: '320px',
   },
 };
 

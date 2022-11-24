@@ -1,12 +1,12 @@
-import { ErrorMessage } from "@hookform/error-message";
-import { TextField, Box } from "@mui/material";
-import React from "react";
-import { Controller, useFormContext } from "react-hook-form";
+import { ErrorMessage } from '@hookform/error-message';
+import { TextField, Box, Typography } from '@mui/material';
+import React from 'react';
+import { Controller, useFormContext } from 'react-hook-form';
 
 // Css
 const customCss = {
   errorMessage: {
-    color: "red",
+    color: 'red',
   },
 };
 
@@ -39,7 +39,9 @@ const InputElement = (props) => {
         errors={errors}
         name={name}
         render={({ message }) => (
-          <Box sx={customCss.errorMessage}>{message}</Box>
+          <Box sx={customCss.errorMessage}>
+            <Typography variant='subtitle2'>{message}</Typography>
+          </Box>
         )}
       />
     </>

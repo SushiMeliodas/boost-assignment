@@ -13,7 +13,7 @@ import { FormProvider, useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 
-import { CustomButton } from '../components/Common';
+import { CustomButton, CustomStepper } from '../components/Common';
 import { FormOne, FormThree, FormTwo } from '../components/RegisterForm';
 import { isObjEmpty } from '../utils/helper';
 
@@ -134,13 +134,7 @@ const RegisterForm = () => {
               <CardContent>
                 <Box sx={customCss.stepper}>
                   {/* Stepper trigger by sequence */}
-                  <Stepper activeStep={sequence - 1} alternativeLabel>
-                    {steps.map((label) => (
-                      <Step key={label}>
-                        <StepLabel>{label}</StepLabel>
-                      </Step>
-                    ))}
-                  </Stepper>
+                  <CustomStepper steps={steps} activeStep={sequence - 1} />
                 </Box>
                 <form onSubmit={handleSubmit(onSubmit, onError)}>
                   {registerComponent}
