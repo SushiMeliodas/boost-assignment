@@ -7,38 +7,39 @@ import {
   Stepper,
   Step,
   StepLabel,
-} from "@mui/material";
-import React, { useState } from "react";
-import { FormProvider, useForm } from "react-hook-form";
-import { yupResolver } from "@hookform/resolvers/yup";
-import * as yup from "yup";
+} from '@mui/material';
+import React, { useState } from 'react';
+import { FormProvider, useForm } from 'react-hook-form';
+import { yupResolver } from '@hookform/resolvers/yup';
+import * as yup from 'yup';
 
-import { CustomButton } from "../components/Common";
-import { FormOne, FormThree, FormTwo } from "../components/RegisterForm";
-import { isObjEmpty } from "../utils/helper";
+import { CustomButton } from '../components/Common';
+import { FormOne, FormThree, FormTwo } from '../components/RegisterForm';
+import { isObjEmpty } from '../utils/helper';
 
 // Css
 const customCss = {
   mainCard: {
-    margin: "auto",
-    marginTop: "16px",
-    borderRadius: "20px",
-    maxWidth: "500px",
+    margin: 'auto',
+    marginTop: '16px',
+    borderRadius: '20px',
+    maxWidth: '500px',
+    boxShadow: 'rgba(0, 0, 0, 0.35) 0px 5px 15px;',
   },
   stepper: {
-    marginBottom: "15px",
+    marginBottom: '15px',
   },
 };
 
 // Stepper label
-const steps = ["1st Page", "2nd Page", "3rd Page"];
+const steps = ['1st Page', '2nd Page', '3rd Page'];
 
 // Yup schema for validation
 const schema = yup.object({
   email: yup
     .string()
-    .email("Invalid email format.")
-    .required("Required email."),
+    .email('Invalid email format.')
+    .required('Required email.'),
 });
 
 const RegisterForm = () => {
@@ -47,21 +48,21 @@ const RegisterForm = () => {
 
   // React Hook Form related & default value
   const methods = useForm({
-    mode: "onTouched",
+    mode: 'onTouched',
     resolver: yupResolver(schema),
     defaultValues: {
-      email: "",
-      name: "",
-      martial_status: "",
-      gender: "",
-      identification_no: "",
-      employment_status: "",
-      phone_number: "",
-      address_1: "",
-      address_2: "",
-      postcode: "",
-      state: "",
-      city: "",
+      email: '',
+      name: '',
+      martial_status: '',
+      gender: '',
+      identification_no: '',
+      employment_status: '',
+      phone_number: '',
+      address_1: '',
+      address_2: '',
+      postcode: '',
+      state: '',
+      city: '',
     },
   });
   const {
@@ -95,7 +96,7 @@ const RegisterForm = () => {
 
   // Form Submit
   const onSubmit = (data) => {
-    console.log("Success!", data);
+    console.log('Success!', data);
     if (sequence !== 3) {
       if (sequence === 2) {
         setFinalResult(getValues());
@@ -105,12 +106,12 @@ const RegisterForm = () => {
     }
 
     if (sequence === 3) {
-      alert("This is the last form!");
+      alert('This is the last form!');
     }
   };
 
   const onError = (errors, e) => {
-    console.log("Fail!", errors);
+    console.log('Fail!', errors);
     // console.log(errors, e);
   };
 
@@ -121,10 +122,10 @@ const RegisterForm = () => {
         <Grid
           container
           spacing={0}
-          direction="column"
-          alignItems="center"
-          justifyContent="center"
-          style={{ minHeight: "100vh" }}
+          direction='column'
+          alignItems='center'
+          justifyContent='center'
+          style={{ minHeight: '100vh' }}
         >
           <Container fixed>
             {/* Main card */}
@@ -143,35 +144,35 @@ const RegisterForm = () => {
                 </Box>
                 <form onSubmit={handleSubmit(onSubmit, onError)}>
                   {registerComponent}
-                  <Box sx={{ margin: "0", marginTop: "16px" }}>
+                  <Box sx={{ margin: '0', marginTop: '16px' }}>
                     <Grid container>
                       <Grid
                         xs
                         item
-                        display="flex"
-                        justifyContent="space-between"
-                        alignItems="center"
+                        display='flex'
+                        justifyContent='space-between'
+                        alignItems='center'
                       >
                         {sequence !== 1 && (
                           <CustomButton
                             onClick={() => handleToggleBack()}
-                            type="button"
-                            variant="text"
-                            text="Back"
+                            type='button'
+                            variant='text'
+                            text='Back'
                           />
                         )}
                       </Grid>
                       <Grid
                         xs
                         item
-                        display="flex"
-                        justifyContent="flex-end"
-                        alignItems="center"
+                        display='flex'
+                        justifyContent='flex-end'
+                        alignItems='center'
                       >
                         <CustomButton
-                          type="submit"
-                          variant="text"
-                          text="Next"
+                          type='submit'
+                          variant='text'
+                          text='Next'
                           disabled={isObjEmpty(errors) ? false : true}
                         />
                       </Grid>
