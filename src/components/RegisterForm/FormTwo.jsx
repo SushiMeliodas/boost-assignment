@@ -12,6 +12,7 @@ const FormTwo = () => {
           labelText="Phone Number"
           fullWidth
           size="small"
+          type="number"
         />
         <HookFormControl
           control="input"
@@ -33,6 +34,7 @@ const FormTwo = () => {
           labelText="Postcode"
           fullWidth
           size="small"
+          type="number"
         />
         <HookFormControl
           control="input"

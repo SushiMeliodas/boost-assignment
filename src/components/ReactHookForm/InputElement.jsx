@@ -11,7 +11,7 @@ const customCss = {
 };
 
 const InputElement = (props) => {
-  const { name, labelText, fullWidth, size } = props;
+  const { name, labelText, fullWidth, size, ...rest } = props;
   const {
     control,
     formState: { errors },
@@ -24,6 +24,7 @@ const InputElement = (props) => {
         control={control}
         render={({ field: { onBlur, onChange, value } }) => (
           <TextField
+            {...rest}
             name={name}
             onChange={onChange}
             onBlur={onBlur}

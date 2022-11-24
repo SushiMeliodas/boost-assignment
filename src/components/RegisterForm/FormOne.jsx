@@ -53,6 +53,7 @@ const FormOne = () => {
           labelText="Identification No"
           fullWidth
           size="small"
+          type="number"
         />
         <HookFormControl
           control="input"
