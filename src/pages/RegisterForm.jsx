@@ -87,7 +87,7 @@ const RegisterForm = () => {
   }
 
   // Toggle form pages
-  const handleToggleBack = (btnType) => {
+  const handleToggleBack = () => {
     if (sequence <= 3 && sequence !== 1) {
       setSequence((sequence) => sequence - 1);
     }
