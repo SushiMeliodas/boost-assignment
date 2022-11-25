@@ -1,9 +1,9 @@
 {
+  "homepage": ".",
   "name": "technical-assignment",
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://sushimeliodas.github.io/technical-assignment/",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
